@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Modal } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 
 const BooksData = ({ books }) => {
     console.log(books)
@@ -34,6 +33,7 @@ const BooksData = ({ books }) => {
                         </div>
                     );
                 }
+                return null; 
             })}
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
