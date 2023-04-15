@@ -2,19 +2,12 @@ import React from 'react'
 import { NavLink } from "react-router-dom";
 import { Nav} from "react-bootstrap";
 
-
 const Navbar = () => {
     return (
         <>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <div className="container-fluid">
-                    <img
-                        alt=""
-                        src="/logo.svg"
-                        width="30"
-                        height="30"
-                        className="d-inline-block align-top"
-                    />{'    '}
+                   
                     <Nav.Link as={NavLink} to='/' className="navbar-brand">
                         E-Book
                     </Nav.Link>

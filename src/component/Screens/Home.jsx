@@ -157,7 +157,7 @@ function Home() {
         <>
           <BooksData books={currentBooks} />
           {currentBooks.length === 0 && (
-            <p>No books found for the current page</p>
+            <p >No books found for the current page please enter correct keywords</p>
           )}
           <Pagination
             booksPerPage={booksPerPage}

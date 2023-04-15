@@ -1,30 +1,28 @@
-// import logo from './logo.svg';
-import Navbar from '../src/component/Global/Navbar';
-import './App.css';
+import { lazy, Suspense } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Navbar from './component/Global/Navbar';
 import Footer from './component/Global/Footer';
-import About from './component/Screens/About';
-import Home from './component/Screens/Home';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import './App.css';
 
+const Home = lazy(() => import('./component/Screens/Home'));
+const About = lazy(() => import('./component/Screens/About'));
 
 function App() {
   return (
     <>
       <BrowserRouter>
+        
+
+        <Suspense fallback={<div>Loading...</div>}>
         <Navbar />
-
-        <Routes>
-        <Route path="/about" element={<About />} exact/>
-        <Route path="/" element={<Home />} exact/>
-          
-          
-        </Routes>
-
+          <Routes>
+            <Route path="/about" element={<About />} exact />
+            <Route path="/" element={<Home />} exact />
+          </Routes>
+        </Suspense>
 
         <Footer />
       </BrowserRouter>
-
-
     </>
   );
 }
